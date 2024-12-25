@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter',sans-serif;
+            text-decoration: none;
+            background-color: var(--background-color);
+            
+        }
+        li{
+            padding-bottom: 1.5rem;
+            list-style-type: none;
+        }
+        a{
+            color: #555;
+            font-weight: 500;
+        }
+        :root{
+            --primary-color: #6366F1;
+            --ascent-color: #3f83f8;
+            --text-color: #333333;
+            --link-color: #2563eb;
+            --background-color:#ffffff;
+            --light-gray:#f0f0f0;
+            --gray:#808080;
+            --dark-gray:#555;
+        }
+        #gayab{
+            display: none;
+            border-radius: 2rem;
+        }
+
+        .top_container{
+            width: 100%;
+            max-height: 10rem;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            background-color: var(--background-color);
+        }
+        .logo_image, #gayab{
+            height: 2rem;
+            width: 2rem;
+            position: relative;
+            top: 0.3rem;
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            
+        }
+        .logo_box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 1.625rem;  
+        }
+        .logo_text{
+            font-weight: bolder;
+            color: var(--text-color);
+        }
+        .nav_box{
+            display: flex;
+            gap: 1rem;
+        }
+        .item{
+            color: var(--gray);
+            font-weight: 600;
+        }
+        .contact{
+            background-color: var(--link-color);
+            padding: 0.5rem;
+            color: var(--background-color);
+            font-weight: 600;
+            border-radius: 5px;
+        }
+        .contact:hover{
+            background-color: var(--ascent-color);
+        }
+        .item:hover{
+            color: var(--ascent-color);
+        }
+        @media screen and (max-width:800px) {
+            .nav_box{
+                display: none;
+            }
+            .contact{
+                display: none;
+            }
+            #gayab{
+                display: block;
+            }
+            .header{
+                width: 90%;
+            }
+            .main{
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+
+
+        .hero_container{
+            margin-top: 1rem;
+            width: 100%;
+            
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            background-color: var(--background-color);
+        }
+        .left_container{
+
+            width: 50%;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            animation: 1s ease 0s leftslide;
+
+        }
+        @keyframes leftslide {
+
+            0%{
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0);
+            }
+            
+        }
+        .right_container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+
+        }
+        .main{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            
+
+        }
+        .right_img{
+            width: 100%;
+            height: 30rem;
+            border-radius: 2rem;
+            background-repeat: no-repeat; /* Ensures the image does not repeat */
+            background-size: cover;      /* Scales the image to cover the entire container */
+            background-position: center;
+            padding: 1rem;
+            
+        }
+        .title1{
+            color: var(--link-color);
+            font-weight: bold;
+            font-size: 0.625rem;
+        }
+        .title2{
+            font-size: 3.2rem;
+        }
+        .title3{
+            color: var(--gray);
+            font-weight: 500;
+            width: 80%;
+            font-size: 0.8rem;
+        }
+
+        .button_container{
+            display: flex;
+            gap: 2rem;
+            height: 3rem;
+            align-items: center;
+        }
+        .start,.tour{
+            background-color: var(--link-color);
+            padding: 0.5rem;
+            color: var(--background-color);
+            font-weight: 600;
+            border-radius: 5px;
+        }
+        .tour{
+        background-color: #333333;
+        }
+        .start:hover,.tour:hover{
+            background-color: rgb(239, 97, 30);
+        }
+
+        @media screen and (max-width:800px){
+            .left_container{
+                width: 100%;
+                padding: 0;
+            }
+            .right_container{
+                width: 100%;
+            }
+            .hero_container{
+                padding: 0rem;
+            }
+            .main{
+                width: 90%;
+            }
+            .title2{
+                font-size: 2rem;
+            }
+            *{
+                text-align: center;
+            }
+            .title3{
+                width: 100%;
+            }
+            .button_container{
+                justify-content: center;
+            }
+        }
+
+
+
+
+
+
+
+
+        .software_container{
+            width: 100%;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            animation: 1s ease 0s leftslide;
+        }
+        #abcd{
+            position: relative;
+            top: 0;
+            object-fit: cover;
+            border-radius: 0.1rem;
+            
+        }
+        .grid_tab{
+            display: grid;
+            margin-top: 1rem;
+            grid-template-columns: repeat(4,1fr);
+            width: fit-content;
+            justify-self: center;
+            
+        }
+
+        .logus_text{
+            font-size: 1rem;
+            
+        }
+
+        @media screen and (max-width:800px){
+            .grid_tab{
+                grid-template-columns: repeat(2,1fr);
+                gap: 1rem;
+            }
+        }
+
+
+        .card_container{
+            background-color: rgb(231, 218, 218);
+            width: 100%;
+            height: auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card_box{
+            width: 58%;
+            padding: 2rem;
+            text-align: center;
+            background-color: rgb(231, 218, 218);
+        }
+        .card_heading{
+            font-size: 2.2rem;
+            font-weight: 700;
+            background-color: rgb(231, 218, 218);
+        }
+        .card_para{
+            margin-top: 1rem;
+            background-color: rgb(231, 218, 218);
+            color: var(--gray);
+        }
+        .grid_card{
+            margin-top: 1rem;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            justify-content: center;
+            background-color: rgb(231, 218, 218);
+            gap: 1.8rem;
+        }
+        .boxa{
+            width: 100%;
+            border-radius: 1rem;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            align-items: center;
+            gap: 1rem;
+            background-color: #2563eb;
+        }
+        .grid_image{
+            height: 3rem;
+            width: 3rem;
+            border-radius: 1.5rem;
+            transition:all 0.2s linear 0s;
+        }
+        .grid_image:hover{
+            transform: scale(1.5);
+        }
+        .card_grid_heading1{
+            color: white;
+            background-color: #2563eb;
+        }
+        .card_grid_para1{
+            color: white;
+            background-color: #2563eb;
+        }
+        .card_grid_heading2{
+            color: white;
+            background-color: rgba(248, 3, 27, 0.575) ;
+        }
+        .card_grid_para2{
+            color: white;
+            background-color: rgba(248, 3, 27, 0.575) ;
+        }
+        .card_grid_heading3{
+            color: white;
+            background-color: rgb(243, 165, 19);
+        }
+        .card_grid_para3{
+            color: white;
+            background-color: rgb(243, 165, 19);
+        }
+        .card_grid_heading4{
+            color: white;
+            background-color: rgb(107, 206, 196);
+        }
+        .card_grid_para4{
+            color: white;
+            background-color: rgb(107, 206, 196);
+        }
+        .card_grid_heading5{
+            color: white;
+            background-color: rgba(15, 61, 23, 0.832);
+        }
+        .card_grid_para5{
+            color: white;
+            background-color: rgba(15, 61, 23, 0.832);
+        }
+        .card_grid_heading6{
+            color: white;
+            background-color: rgb(222, 107, 203);
+        }
+        .card_grid_para6{
+            color: white;
+            background-color: rgb(222, 107, 203);
+        }
+
+        #box2{
+            background-color: rgba(248, 3, 27) ;
+        }
+        #box3{
+            background-color: rgb(243, 165, 19);
+        }
+        #box4{
+            background-color: rgb(107, 206, 196);
+        }
+        #box5{
+            background-color: rgba(15, 61, 23);
+        }
+        #box6{
+            background-color: rgb(222, 107, 203);
+        }
+
+        @media(max-width:1000px){
+            .card_box{
+                width: 80%;
+            }
+        }
+        @media(max-width:800px){
+            .card_box{
+                width: 90%;
+            }
+        }
+        @media(max-width:650px){
+
+            .card_box{
+                width: 90%;
+            }
+            .grid_card{
+                grid-template-columns: repeat(1,1fr);
+            }
+        }
+
+        .testimonial_container{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            /* border: 1px solid black; */
+            margin-top: 1rem;
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .testimonial_box{
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .testimonial_heading{
+            font-size: 2rem;
+        }
+        .testimonial_grid{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            justify-content: center;
+            gap: 2rem;
+        }
+        .testimonial_img{
+            height: 6rem;
+            width: 7rem;
+            /* border: 1px solid black;
+            border-radius: 7rem; */
+        }
+        .testimonial_name{
+            color: var(--link-color);
+            font-size: 1rem;
+        }
+        .testimonial_para{
+            font-size: 0.9rem;
+        }
+        .testimonial_grid_box{
+            border: 1px solid black;
+            padding: 1rem;
+            border-radius: 1rem;
+            box-shadow: 0px 0px 10px grey;
+            transition: transform 0.3s ease ;
+        }
+        @media screen and (max-width:900px) {
+            .testimonial_grid{
+                grid-template-columns: repeat(2,1fr);
+            }
+            
+        }
+        @media screen and (max-width:550px) {
+            .testimonial_grid{
+                grid-template-columns: repeat(1,1fr);
+            }
+            
+        }
+        .testimonial_grid_box:hover{
+            transform: scale(1.1);
+            border-color: #2563eb;
+        }
+
+
+        .newsletter_container{
+            height: auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 5rem;
+            align-items: center;
+        }
+        .newsletter_box{
+            width: 80%;
+            display: flex;
+            height: auto;
+            box-shadow: 0px 0px 2rem gray;
+        }
+        .newsletter_left{
+            width: 50%;
+        }
+        .newsletter_right{
+            width: 50%;
+            overflow: hidden;
+
+        }
+        .newsletter_heading{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            /* align-items: center; */
+            margin: 0.5rem;
+            height: 95%;
+            text-align: start;
+            padding: 1.2rem;
+            overflow: hidden;
+            
+        }
+        .newsletter_image{
+            height:100%;
+            border-radius: 0.5rem;
+            width: 100%;
+        }
+
+        .newsletter_head{
+            font-size: 2rem;
+            color: var(--link-color);
+        }
+        .newsletter_para{
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #808080;
+        }
+        .newsletter_form{
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .newsletter_mini_para{
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #808080; 
+        }
+        .newsletter_email, .newsletter_button{
+            height: 2rem;
+            border-radius: 0.2rem;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+            
+        }
+        .newsletter_button{
+            background-color: #2563eb;
+        }
+        .newsletter_send{
+            margin-right: 1rem;
+            color: whitesmoke;
+            background-color: #2563eb;
+        }
+
+        .newsletter_send:hover{
+            color: orange;
+        }
+        @media(max-width:830px){
+            .newsletter_box{
+                flex-direction: column;
+            }
+            .newsletter_left{
+                width: 100%;
+            }
+            .newsletter_right{
+                width: 100%;
+                overflow: hidden;
+            
+            }
+        }
+
+
+        .footer_container{
+            width: 100%;
+            height: auto;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .footer_box2{
+            width: 80%;
+            border-top: 1px solid black;
+        }
+        .footer_footer{
+            margin-top: 0.8rem;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #555;
+            font-weight: 600;
+        }
+        .footer_box{
+            width: 80%;
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+        }
+        .footer_box_left{
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 2rem;
+            margin-left: 3rem;
+        }
+        .footer_logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .footer_logo_img{
+            height: 2.5rem;
+            width: 2.5rem;
+        }
+        .footer_icon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+        .footer_icon_img{
+            height: 2.5rem;
+            width: 2.5rem;
+        }
+        .footer_box_right{
+            width: 54%;
+            display: grid;
+            justify-items: center;
+            align-content: center;
+            grid-template-columns: repeat(4,1fr);
+        }
+        .footer_box_grid{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: space-between;
+            height: 18rem;
+        }
+        .footer_box_grid_list{
+            height: 15rem;
+        }
+        .footer_para{
+            font-weight: 500;
+            color: #333333;
+        }
+
+        @media(max-width:1000px){
+            .footer_box{
+                flex-direction: column;
+            }
+
+            .footer_box_left,.footer_box_right{
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                height: auto;
+            }
+            .footer_box_grid{
+                margin-top: 1rem;
+            }
+            .footer_box_grid_head{
+                height: 20%;
+            
+            }
+
+        }
+
+        @media(max-width:720px){
+            .footer_box_right{
+                grid-template-columns: repeat(2,1fr);
+            }
+            .footer_box_left{
+                margin: auto;
+            }
+        }
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="top_container">
+        <div class="header">
+            <div class="logo_box">
+                <a href="#logo_image"><img src="logo.png" alt="logo" class="logo_image"></a>
+                <a href="#logo_text" class="logo_text">
+                    <span>StudySync</span>
+                </a>
+            </div>
+            <div class="nav_box">
+
+                <a href="#home" class="item">Home</a>
+                <a href="#features" class="item">Features</a>
+                <a href="#pricing" class="item">Pricing</a>
+                <a href="#blogs" class="item">Blogs</a>
+                <a href="#about" class="item">About</a>
+
+            </div>
+            <a href="#contactus" class="contact">Contact Us</a>
+            
+            <img id="gayab" src="logo_left.webp" alt="gogo">
+            
+        </div>
+    </div>
+
+    <div class="hero_container">
+        <div class="main">
+            <div class="left_container">
+                <p class="title1">Very proud to introduce</p>
+                <h2 class="title2">Seamless Learning for Brighter Futures</h2>
+                <p class="title3">Our innovative platforms offers an effortless and seamless approach to learning, empowering students of all ages to achieve brighter futures. Join us on a transformative journey to simplify education and unlock your full potential.</p>
+                <div class="button_container">
+                    <a href="#start" class="start">Start now</a>
+                    <a href="#tour" class="tour">Take tour</a>
+                </div>
+            </div>
+            <div class="right_container">
+    
+                <img src="img2.webp" alt="logo" class="right_img">
+    
+            </div>
+        </div>
+    </div>
+
+    <div class="software_container">
+        <div class="trust">
+            Trusted by the best
+        </div>
+        <div class="grid_tab">
+            <div class="logo_box" id="abc">
+                <a href="https://www.google.com"><img src="google.png" alt="logo" id="abcd" class="logo_image"></a>
+                <a href="https://www.google.com" class="logus_text">
+                    <span>Google</span>
+                </a>
+            </div>
+            <div class="logo_box" id="abc">
+                <a href="https://www.microsoft.com"><img src="window.png" alt="logo" id="abcd" class="logo_image"></a>
+                <a href="https://www.microsoft.com" class="logus_text">
+                    <span>Microsoft</span>
+                </a>
+            </div>
+            <div class="logo_box" id="abc">
+                <a href="#https://www.linkedin.com"><img src="linkdeln.png" alt="logo" id="abcd" class="logo_image"></a>
+                <a href="#https://www.linkedin.com" class="logus_text">
+                    <span>Linkdeln</span>
+                </a>
+            </div>
+            <div class="logo_box" id="abc">
+                <a href="#logo_image"><img src="vector.png" alt="logo" id="abcd" class="logo_image"></a>
+                <a href="#logo_text" class="logus_text">
+                    <span>VectorEdu</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card_container">
+        <div class="card_box">
+            <h2 class="card_heading">Our competitive advantage</h2>
+            <p class="card_para">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of real written text but is random or otherwise generated.</p>
+            <div class="grid_card">
+                <div class="boxa" id="box1">
+                    <img class="grid_image" src="a.png" alt="">
+                    <h2 class="card_grid_heading1">Personalized Learning</h2>
+                    <p class="card_grid_para1">Offer tailored learning experiences through AI and machine learning to cater to individual student needs.</p>
+                </div>
+                <div class="boxa" id="box2">
+                    <img class="grid_image" src="b.png" alt="">
+                    <h2 class="card_grid_heading2">Affordability</h2>
+                    <p class="card_grid_para2">Provide high-quality education at an affordable price point, making it accessible to a broader audience.</p>
+                </div>
+                <div class="boxa" id="box3">
+                    <img class="grid_image" src="c.png" alt="">
+                    <h2 class="card_grid_heading3">Industry Partnerships</h2>
+                    <p class="card_grid_para3">Collaborate with well-known companies and institutions to offer accredited courses and certifications, adding credibility to your offerings.</p>
+                </div>
+                <div class="boxa" id="box4">
+                    <img class="grid_image" src="d.png" alt="">
+                    <h2 class="card_grid_heading4">Innovative Technology</h2>
+                    <p class="card_grid_para4">Utilize cutting-edge technology, such as augmented reality or virtual reality, to create immersive learning experiences.</p>
+                </div>
+                <div class="boxa" id="box5">
+                    <img class="grid_image" src="e.png" alt="">
+                    <h2 class="card_grid_heading5">Responsive Support</h2>
+                    <p class="card_grid_para5">Provide exceptional customer support and assistance to students and educators.</p>
+                </div>
+                <div class="boxa" id="box6">
+                    <img class="grid_image" src="f.png" alt="">
+                    <h2 class="card_grid_heading6">Analytics and Insights</h2>
+                    <p class="card_grid_para6">Offer detailed progress tracking and analytics to help students and teachers monitor performance and make data-driven decisions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonial_container">
+        <div class="testimonial_box">
+
+            <h2 class="testimonial_heading">What Others Say About Us</h2>
+
+            <div class="testimonial_grid">
+                
+                <div class="testimonial_grid_box">
+                    <p class="testimonial_para">“StudySync revolutionized my classroom! Engaging content and teacher resources make learning enjoyable. Highly recommended for educators.”</p>
+                    <img class="testimonial_img" src="aa (1).png" alt="basssss">
+                    <h2 class="testimonial_name">Sarah Johnson</h2>
+                    <p class="testimonial_para">8th Grade English Teacher</p>
+                </div>
+                <div class="testimonial_grid_box">
+                    <p class="testimonial_para">“StudySync revolutionized my classroom! Engaging content and teacher resources make learning enjoyable. Highly recommended for educators.”</p>
+                    <img class="testimonial_img" src="aa (2).png" alt="basssss">
+                    <h2 class="testimonial_name">Jonny Johnson</h2>
+                    <p class="testimonial_para">9th Grade English Teacher</p>
+                </div>
+                <div class="testimonial_grid_box">
+                    <p class="testimonial_para">“StudySync revolutionized my classroom! Engaging content and teacher resources make learning enjoyable. Highly recommended for educators.”</p>
+                    <img class="testimonial_img" src="aa (3).png" alt="basssss">
+                    <h2 class="testimonial_name">William jen</h2>
+                    <p class="testimonial_para">10th Grade English Teacher</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="newsletter_container">
+        <div class="newsletter_box">
+            <div class="newsletter_left">
+                <img class="newsletter_image" src="bb.png" alt="hahahahah">
+            </div>
+            <div class="newsletter_right">
+                <div class="newsletter_heading">
+                    <h2 class="newsletter_head">Get the latest updates</h2>
+                    <p class="newsletter_para">Sign up for our newsletter</p>
+                    <div class="newsletter_form">
+                        <label for="emaile"></label>
+                        <input placeholder="Email" class="newsletter_email" type="email" id="emaile">
+                        <button class="newsletter_button"><a class="newsletter_send" href="">Send</a></button>
+                    </div>
+                    <p class="newsletter_mini_para">
+                        By signing up to our newsletter you agree to our <a href="#top_container">Terms of service</a> and <a href="#top_container">Privacy Policy</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer_container">
+     <div class="footer_box">
+        <div class="footer_box_left">
+            <div class="footer_logo">
+                <img src="logo.png" class="footer_logo_img" alt="">
+                <h2 class="footer_logo_text">StudySync</h2>
+            </div>
+            <div class="footer_para">
+                <p>Seamless Learning for Brighter Futures.</p>
+            </div>
+            <div class="footer_icon">
+                <a href="#"><img class="footer_icon_img" src="cc (1).png" alt=""></a>
+                <a href="#"><img class="footer_icon_img" src="cc (2).png" alt=""></a>
+                <a href="#"><img class="footer_icon_img" src="cc (3).png" alt=""></a>
+                <a href="#"><img class="footer_icon_img" src="cc (4).png" alt=""></a>
+            </div>
+        </div>
+        <div class="footer_box_right">
+            <div class="footer_box_grid">
+                <h3 class="footer_box_grid_head">
+                    Products
+                </h3>
+
+                <ul class="footer_box_grid_list">
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Solutions</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Customers</a></li>
+                </ul>
+            </div>
+            <div class="footer_box_grid">
+                <h3 class="footer_box_grid_head">
+                    Company
+                </h3>
+
+                <ul class="footer_box_grid_list">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer_box_grid">
+                <h3 class="footer_box_grid_head">
+                    Support
+                </h3>
+
+                <ul class="footer_box_grid_list">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Chat</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer_box_grid">
+                <h3 class="footer_box_grid_head">
+                    Legal
+                </h3>
+
+                <ul class="footer_box_grid_list">
+                    <li><a href="#">Terms of service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Settings</a></li>
+                </ul>
+            </div>
+        </div>
+     </div> 
+     <div class="footer_box2">
+            <p class="footer_footer">&#169 2024 - Present StudySync. All rights reserved.</p>  
+     </div>  
+    </div>
+
+</body>
+</html>
